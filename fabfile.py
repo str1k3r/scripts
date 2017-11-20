@@ -10,7 +10,7 @@ env.hosts = [
 ]
 
 #ENV
-env.user   = "hheroes"
+env.user   = "%USERNAME"
 
 #FUNCTIONS
 #update
