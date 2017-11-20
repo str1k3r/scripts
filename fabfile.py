@@ -23,7 +23,7 @@ def uu():
     run("echo {} | sudo -S apt-get -y upgrade".format(env.password))
 
 #update and dist-upgrade
-def du():
+def ud():
     u()
     run("echo {} | sudo -S apt-get -y dist-upgrade".format(env.password))
 
@@ -39,5 +39,5 @@ def uuc():
 
 #update, dist-upgrade, cleanup
 def udc():
-    du()
+    ud()
     c()
