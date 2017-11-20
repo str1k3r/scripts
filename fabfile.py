@@ -34,8 +34,8 @@ def c():
 
 # update, upgrade, cleanup
 def uuc():
-   uu()
-   c()
+    uu()
+    c()
 
 #update, dist-upgrade, cleanup
 def udc():
