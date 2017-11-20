@@ -1,4 +1,4 @@
-#PREPARE
+#SETUP
 #apt-get install fabric
 #RUN fab -f path_to_the_fabfile.py %ACTION -p $PASSWORD
 from fabric.api import *
