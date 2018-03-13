@@ -1,12 +1,12 @@
-#General Steps
-##Upgrade rsyslog to 8.x (for wildcard logs shipping support)
+# General Steps
+## Upgrade rsyslog to 8.x (for wildcard logs shipping support)
 ```
 sudo add-apt-repository ppa:adiscon/v8-stable
 sudo apt-get update
 sudo apt-get install rsyslog
 ```
-#Client Side (Sender)
- ##Create /etc/rsyslog.d/5-datahandler.conf with the following content
+# Client Side (Sender)
+##  Create /etc/rsyslog.d/5-datahandler.conf with the following content
 ```
 module(load="imfile" mode="inotify")
  
@@ -25,28 +25,28 @@ ruleset(name="logs"){
         call sendToLogserver
         }
 ```
-##Add the following line to the /etc/hosts
+## Add the following line to the /etc/hosts
 ```
 172.31.39.184 datahandler-rsyslog
 ```
-##Restart rsyslog service
+## Restart rsyslog service
 ```
 sudo service rsyslog restart
 ```
-##Repeat the same on all servers
-Server Side (Receiver)
-##Enable TCP reception in the /etc/rsyslog.conf
+## Repeat the same on all servers
+# Server Side (Receiver)
+## Enable TCP reception in the /etc/rsyslog.conf
 ```
 # provides TCP syslog reception
 $ModLoad imtcp
 $InputTCPServerRun 514
 $AllowedSender TCP, 172.31.0.0/16
 ```
-##Create the directory for the logs
+## Create the directory for the logs
 ```
 mkdir /var/log/datahandler
 chown syslog:adm /var/log/datahandler -R
-##Create /etc/rsyslog.d/5-datahandler.conf with the following content:
+## Create /etc/rsyslog.d/5-datahandler.conf with the following content:
 ```
 input(type="imtcp" port="514" ruleset="datahandler_rule")
 template(name="datahandler" type="string" string="/var/log/datahandler/%HOSTNAME%/%programname%.log")
@@ -55,7 +55,7 @@ ruleset(name="datahandler_rule"){
 action(type="omfile" DynaFile="datahandler") stop
 }
 ```
-##Restart rsyslog service
+## Restart rsyslog service
 ```
 sudo service rsyslog restart
 ```
