@@ -6,7 +6,7 @@ sudo apt-get update
 sudo apt-get install rsyslog
 ```
 # Client Side (Sender)
-##  Create /etc/rsyslog.d/5-datahandler.conf with the following content
+##  Create /etc/rsyslog.d/5-datahandler.conf with the following content:
 ```
 module(load="imfile" mode="inotify")
  
