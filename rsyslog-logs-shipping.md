@@ -46,6 +46,7 @@ $AllowedSender TCP, 172.31.0.0/16
 ```
 mkdir /var/log/datahandler
 chown syslog:adm /var/log/datahandler -R
+```
 ## Create /etc/rsyslog.d/5-datahandler.conf with the following content:
 ```
 input(type="imtcp" port="514" ruleset="datahandler_rule")
