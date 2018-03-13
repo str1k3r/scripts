@@ -1,3 +1,4 @@
+# Client and Server configuration for rsyslog logs shipping
 # General Steps
 ## Upgrade rsyslog to 8.x (for wildcard logs shipping support)
 ```
@@ -33,7 +34,6 @@ ruleset(name="logs"){
 ```
 sudo service rsyslog restart
 ```
-## Repeat the same on all servers
 # Server Side (Receiver)
 ## Enable TCP reception in the /etc/rsyslog.conf
 ```
