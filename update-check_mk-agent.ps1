@@ -9,7 +9,7 @@ foreach ($Computer in $ComputerName.DNSHostName)
     {
         New-Item $DestinationFolder -Type Directory
     }
-    Invoke-WebRequest -Uri "$url" -Out "$DestinationFolder\check_mk_agent.msi"
+    Invoke-WebRequest -Uri "$url" -OutFile "$DestinationFolder\check_mk_agent.msi"
     Invoke-Command -ComputerName $Computer -ScriptBlock {
         try {
             Start-Process -FilePath "msiexec" -ArgumentList "/i c:\Temp\check_mk_agent.msi /qn" -Wait
