@@ -1,0 +1,1 @@
+﻿Get-ChildItem D:\data\navicat\backup -Recurse -File | Where-Object {$_.Extension -eq ".nb3" -and $_.CreationTime -lt (Get-Date).AddDays(-30)} | Remove-Item -Force
