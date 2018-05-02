@@ -1,0 +1,9 @@
+#install4j response file for Bitbucket
+app.install.service$Boolean=true
+portChoice=default
+httpPort=7990
+serverPort=8006
+app.bitbucketHome=/var/atlassian/application-data/bitbucket
+app.defaultInstallDir=/opt/atlassian/bitbucket/5.10.0
+launch.application$Boolean=false
+sys.confirmedUpdateInstallationString=true
