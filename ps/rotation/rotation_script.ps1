@@ -35,8 +35,8 @@ Function Rotate-Logs {
 		[int]$RotationWeekly = 4, # The number of weekly files to keep
 		[Parameter(ValueFromPipeline=$false)]
 		[int]$RotationMonthly = 4,# The number of monthly files to keep
-        [Parameter(ValueFromPipeline=$false)]
-	    [string]$LogFileRegEx = ".nb3" #Extension
+        	[Parameter(ValueFromPipeline=$false)]
+	    	[string]$LogFileRegEx = ".nb3" #Extension
 	)
  
 	Process {
