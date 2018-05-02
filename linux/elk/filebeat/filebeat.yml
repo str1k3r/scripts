@@ -1,0 +1,19 @@
+filebeat.prospectors:
+- paths:
+  - /var/www/itrack_replier/var/logs/prod.log
+  fields: {log_source: replier-symfony-prod}
+- paths:
+  - /var/www/itrack_replier/var/logs/dev.log
+  fields: {log_source: replier-symfony-dev}
+- paths:
+  - /var/www/itrack_replier/log/update-last-time-transmitted.php.err
+  fields: {log_source: replier-php}
+- paths:
+  - /var/log/nginx/*.log
+  fields: {log_source: beanstalk-nginx}
+- paths:
+  - /var/www/html/app/logs/prod.log
+  fields: {log_source: beanstalk-symfony-prod}
+
+output.logstash:
+  hosts: ["ELK_HOST_NAME:5044"]
