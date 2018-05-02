@@ -1,6 +1,5 @@
 ### Linux \ Shell \ Python
 linux\rsyslog - rsyslog log shipping to central store
-linux\elk - elk config files
 linux\download-slow-query-log.sh - downloading slow query logs from AWS RDS
 linux\fabfile.py - Fabric definition file
 linux\fs_cleanup.sh - partition cleanup script
