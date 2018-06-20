@@ -1,0 +1,4 @@
+  server_name DOMAIN.com www.DOMAIN.com
+    if ( $host ~ ^www\.(?<domain>.+)$ ) {
+        return 301 https://DOMAIN.com$request_uri;
+    }
